@@ -28,61 +28,10 @@
 **
 **********************************************************************/
 
-#include "test1.h"
+#pragma once
 
-#include <QDebug>
+#include <QLoggingCategory>
 
-
-class MyAddressBookImplementation : public AddressBookImplementation
-{
-
-    QString property1() const
-    {
-        return "gggg";
-    }
-
-    void do1()
-    {
-    }
-
-};
-
-
-class MyAddressBookImplementationWithProperties : public AddressBookImplementationWithProperties
-{
-
-public:
-    void do1()
-    {
-        signal1();
-    }
-
-};
-
-
-class MyAddressBookExtendedImplementation : public MyAddressBookImplementationWithProperties
-{
-
-public:
-    void do2()
-    {
-        //        signal2();
-    }
-
-};
-
-
-int main()
-{
-    MyAddressBookImplementation i1;
-    MyAddressBookImplementationWithProperties i2;
-    MyAddressBookExtendedImplementation i3;
-
-    i3.property1();
-    //    i3.property2();
-    i3.do1();
-    i3.do2();
-
-    qCDebug(LogGeneral) << "OKKK";
-    return 0;
-}
+Q_DECLARE_LOGGING_CATEGORY(LogGeneral)
+Q_DECLARE_LOGGING_CATEGORY(LogGenerated)
+Q_DECLARE_LOGGING_CATEGORY(LogIpc)

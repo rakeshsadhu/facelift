@@ -29,12 +29,13 @@
 **********************************************************************/
 
 #include "ServiceWrapper.h"
+#include "FaceliftLogging.h"
 
 namespace facelift {
 
 void ServiceWrapperBase::setWrapped(InterfaceBase &wrapper, InterfaceBase *wrapped)
 {
-    qDebug() << "Wrapped type for" << this << &wrapper << "" << wrapper.interfaceID() << ":" << wrapped;
+    qCDebug(LogGeneral) << "Wrapped type for" << this << &wrapper << "" << wrapper.interfaceID() << ":" << wrapped;
 }
 
 void ServiceWrapperBase::addConnection(QMetaObject::Connection connection)
